@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Js-partie5-exo1</title>
+        <link type="text/css" rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Mot de passe</legend>
+                <label for="password">Mot de passe:</label>
+                <input style="border: 1px black solid;" type="password" id="password" placeholder="Mot de Passe" required /><br>
+                <label for="confirmPassword">Confirmer le mot de passe:</label>
+                <input style="border: 1px black solid;" type="password" id="confirmPassword" placeholder="Confirmer le mot de passe" required /><br>
+                <button onclick='checkPass();'>Valider</button>
+            </fieldset>
+        </form>
+        <script>
+            function checkPass() {
+                var pass = document.getElementById('password').value, confirmPass = document.getElementById('confirmPassword').value;
+                if (pass == confirmPass) {
+                    document.getElementById('password').style.borderColor = "green";event.preventDefault();
+                    document.getElementById('confirmPassword').style.borderColor = "green";event.preventDefault();
+                } else {
+                    document.getElementById('password').style.borderColor = "red";event.preventDefault();
+                    document.getElementById('confirmPassword').style.borderColor = "red";event.preventDefault();
+                }
+            }
+        </script>
+    </body>
+</html>
